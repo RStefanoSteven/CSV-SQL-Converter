@@ -1,0 +1,24 @@
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\CSV SQL Converter.exe
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\CSV SQL Converter.deps.json
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\CSV SQL Converter.runtimeconfig.json
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\CSV SQL Converter.runtimeconfig.dev.json
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\CSV SQL Converter.dll
+C:\Users\stefa\source\repos\CSV SQL Converter\bin\Debug\netcoreapp3.1\CSV SQL Converter.pdb
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.csproj.AssemblyReference.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.AssemblyInfoInputs.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.AssemblyInfo.cs
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.csproj.CoreCompileInputs.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\staticwebassets\CSV SQL Converter.StaticWebAssets.Manifest.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\staticwebassets\CSV SQL Converter.StaticWebAssets.Pack.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.CSV SQL Converter.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.CSV SQL Converter.props
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.CSV SQL Converter.props
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.CSV SQL Converter.props
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.RazorTargetAssemblyInfo.cache
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.dll
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.pdb
+C:\Users\stefa\source\repos\CSV SQL Converter\obj\Debug\netcoreapp3.1\CSV SQL Converter.genruntimeconfig.cache
