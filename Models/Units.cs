@@ -6,6 +6,7 @@ namespace CSV_SQL_Converter.Models
     /// <summary>
     /// Classe d'entité representant la table Units
     /// </summary>
+    [Table("Units")]
     public class Units
     {
         /// <summary>
