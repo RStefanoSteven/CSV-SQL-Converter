@@ -5,8 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CSV_SQL_Converter.Data;
 using CSV_SQL_Converter.Models;
+using CsvHelper;
+using CSV_SQL_Converter.Services;
+using CSV_SQL_Converter.Mappers;
+using CSV_SQL_Converter.Interfaces;
+using CsvHelper.Configuration;
+using System.Globalization;
+using System.IO;
+
 
 namespace CSV_SQL_Converter.Controllers
 {
@@ -21,12 +28,12 @@ namespace CSV_SQL_Converter.Controllers
             _context = context;
         }
 
-        // GET: api/Countries
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Countries>>> GetCountries()
-        {
-            return await _context.Countries.ToListAsync();
-        }
+        //// GET: api/Countries
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Countries>>> GetCountries()
+        //{
+        //    return await _context.Countries.ToListAsync();
+        //}
 
         // GET: api/Countries/5
         [HttpGet("{id}")]
@@ -119,6 +126,19 @@ namespace CSV_SQL_Converter.Controllers
         private bool CountriesExists(string id)
         {
             return _context.Countries.Any(e => e.Id == id);
+        }
+        /// <summary>
+        /// Methode permettant d'importer des données sur la BDD à l'aide du CSV
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public List<Countries> CsvImporter()
+        {
+            string filePath = "C:\\Users\\stefa\\source\\repos\\CSV SQL Converter\\Ressources\\COUNTRY_20230321.csv";
+                    
+            List<Countries> Countries = new CsvImporterService<Countries>().ImportData(filePath);
+            return Countries;
+
         }
     }
 }

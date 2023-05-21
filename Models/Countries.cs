@@ -7,7 +7,7 @@ namespace CSV_SQL_Converter.Models
     /// Classe d'entité representant la table Countries
     /// </summary>
     [Table("Countries")]
-    public class Countries
+    public class Countries : CsvEntity
     {
         /// <summary>
         /// Identifiant du pays

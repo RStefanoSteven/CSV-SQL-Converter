@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CSV_SQL_Converter.Data;
 using CSV_SQL_Converter.Models;
 
 namespace CSV_SQL_Converter.Controllers

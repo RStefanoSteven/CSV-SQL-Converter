@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 
-namespace CSV_SQL_Converter.Data
+namespace CSV_SQL_Converter.Models
 {
     /// <summary>
     /// Classe représentant le contexte de base de données et définit les DbSet correspondants aux entités.
@@ -15,6 +15,10 @@ namespace CSV_SQL_Converter.Data
         public DbSet<Countries> Countries { get; set; }
         public DbSet<Units> Units { get; set; }
         public DbSet<Properties> Properties { get; set; }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
 
         /// <summary>
         /// Fonction pour configurer la connection à la base de données

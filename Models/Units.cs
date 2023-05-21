@@ -7,7 +7,7 @@ namespace CSV_SQL_Converter.Models
     /// Classe d'entité representant la table Units
     /// </summary>
     [Table("Units")]
-    public class Units
+    public class Units : CsvEntity
     {
         /// <summary>
         /// Identifiant d'units/surface

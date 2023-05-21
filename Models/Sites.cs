@@ -7,7 +7,7 @@ namespace CSV_SQL_Converter.Models
     /// Classe d'entité représentant la table Sites
     /// </summary>
     [Table("Sites")]
-    public class Sites
+    public class Sites : CsvEntity
     {
         /// <summary>
         /// Identifiant du site

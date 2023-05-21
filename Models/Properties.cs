@@ -8,7 +8,7 @@ namespace CSV_SQL_Converter.Models
     /// Classe d'entité representant la table Properties
     /// </summary>
     [Table("Properties")]
-    public class Properties
+    public class Properties : CsvEntity
     {
         /// <summary>
         /// Identifiant de la propriété
