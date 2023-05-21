@@ -136,6 +136,7 @@ namespace CSV_SQL_Converter.Controllers
         [HttpGet]
         public void CsvImporter()
         {
+            // Chemin de fichier configurable dans le appsettings.json
             string filePath = _configuration["CheminFichierCsv:Country"];
 
             //List<Countries> Countries = new CsvImporterService<Countries>().ImportData(filePath);
