@@ -47,6 +47,21 @@ namespace CSV_SQL_Converter.Controllers
             return units;
         }
 
+        /// <summary>
+        /// Fonction pour récupérer les boutiques en fonction du pays, de l’emplacement et de la zone.
+        /// </summary>
+        /// <param name="code_pays"></param>
+        /// <param name="code_emplacement"></param>
+        /// <param name="code_zone"></param>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public async Task<List<Units>> GetUnits(string code_pays, string code_emplacement, string code_zone)
+        {
+            List<Units> units = await _context.Units.Where(u => u.CountryId == code_pays && u.SiteId == code_emplacement && u.PropertyId == code_zone ).ToListAsync();         
+
+            return units;
+        }
+
         // PUT: api/Units/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -155,5 +170,7 @@ namespace CSV_SQL_Converter.Controllers
             }
 
         }
+
+
     }
 }
