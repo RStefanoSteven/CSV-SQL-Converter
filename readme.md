@@ -21,6 +21,7 @@ L'installation du programme se divise en trois parties.
 #### BDD
 - Creer une base de données de test sur SQL Server
 - En se réferrant au fichier schema.png, créer les tables d'entités ainsi que leurs liaisons
+- Une sauvegarde .bak de la BDD est disponible dans le dossier Ressources à la racine du projet. (Il suffira juste de le restaurer)
 
 #### APPLICATION
 - Dans le fichier appsettings.json à la racine du projet, Section ConnectionStrings, renseigner le nom du serveur et la base de données.
