@@ -31,6 +31,7 @@ namespace CSV_SQL_Converter
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddSingleton<IConfiguration>(Configuration);
             services.AddControllers();
 
         }

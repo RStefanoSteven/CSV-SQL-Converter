@@ -13,7 +13,7 @@ using CSV_SQL_Converter.Interfaces;
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.IO;
-
+using Microsoft.Extensions.Configuration;
 
 namespace CSV_SQL_Converter.Controllers
 {
@@ -22,10 +22,12 @@ namespace CSV_SQL_Converter.Controllers
     public class CountriesController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public CountriesController(AppDbContext context)
+        public CountriesController(AppDbContext context, IConfiguration configuration)
         {
-            _context = context;
+            _context = context;   
+            this._configuration = configuration;
         }
 
         //// GET: api/Countries
@@ -132,12 +134,27 @@ namespace CSV_SQL_Converter.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<Countries> CsvImporter()
+        public void CsvImporter()
         {
-            string filePath = "C:\\Users\\stefa\\source\\repos\\CSV SQL Converter\\Ressources\\COUNTRY_20230321.csv";
-                    
+            string filePath = _configuration["CheminFichierCsv:Country"];
+
+            //List<Countries> Countries = new CsvImporterService<Countries>().ImportData(filePath);
             List<Countries> Countries = new CsvImporterService<Countries>().ImportData(filePath);
-            return Countries;
+
+            try
+            {   
+                //On supprime d'abord tout le contenu de la table avant de mettre à jour pour éviter un conflit de données
+                _context.Countries.RemoveRange(_context.Countries);
+                _context.Countries.AddRange(Countries);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException d)
+            {
+                throw d;
+            }
+            catch (Exception e){
+                throw e;
+            }
 
         }
     }

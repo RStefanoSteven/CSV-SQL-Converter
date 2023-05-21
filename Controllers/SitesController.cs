@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CSV_SQL_Converter.Models;
+using CSV_SQL_Converter.Services;
+using Microsoft.Extensions.Configuration;
 
 namespace CSV_SQL_Converter.Controllers
 {
@@ -14,10 +16,14 @@ namespace CSV_SQL_Converter.Controllers
     public class SitesController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public SitesController(AppDbContext context)
+
+        public SitesController(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            this._configuration = configuration;
+
         }
 
         // GET: api/Sites
@@ -118,6 +124,35 @@ namespace CSV_SQL_Converter.Controllers
         private bool SitesExists(string id)
         {
             return _context.Sites.Any(e => e.Id == id);
+        }
+
+        /// <summary>
+        /// Methode permettant d'importer des données sur la BDD à l'aide du CSV
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public void CsvImporter()
+        {
+            string filePath = _configuration["CheminFichierCsv:Site"];
+
+            List<Sites> sites = new CsvImporterService<Sites>().ImportData(filePath);
+
+            try
+            {
+                //On supprime d'abord tout le contenu de la table avant de mettre à jour pour éviter un conflit de données
+                _context.Sites.RemoveRange(_context.Sites);
+                _context.Sites.AddRange(sites);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException d)
+            {
+                throw d;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
     }
 }

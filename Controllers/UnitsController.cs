@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CSV_SQL_Converter.Models;
+using CSV_SQL_Converter.Services;
+using Microsoft.Extensions.Configuration;
 
 namespace CSV_SQL_Converter.Controllers
 {
@@ -14,10 +16,14 @@ namespace CSV_SQL_Converter.Controllers
     public class UnitsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public UnitsController(AppDbContext context)
+
+        public UnitsController(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            this._configuration = configuration;
+
         }
 
         // GET: api/Units
@@ -118,6 +124,36 @@ namespace CSV_SQL_Converter.Controllers
         private bool UnitsExists(string id)
         {
             return _context.Units.Any(e => e.Id == id);
+        }
+
+        /// <summary>
+        /// Methode permettant d'importer des données sur la BDD à l'aide du CSV
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public void CsvImporter()
+        {
+            // Chemin de fichier configurable dans le appsettings.json
+            string filePath = _configuration["CheminFichierCsv:Shop"];
+
+            List<Units> units = new CsvImporterService<Units>().ImportData(filePath);
+
+            try
+            {
+                //On supprime d'abord tout le contenu de la table avant de mettre à jour pour éviter un conflit de données
+                _context.Units.RemoveRange(_context.Units);
+                _context.Units.AddRange(units);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException d)
+            {
+                throw d;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
         }
     }
 }
