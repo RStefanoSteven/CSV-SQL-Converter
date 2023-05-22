@@ -21,6 +21,7 @@ L'installation du programme se divise en trois parties.
 #### BDD
 - Creer une base de données de test sur SQL Server
 - En se réferrant au fichier schema.png, créer les tables d'entités ainsi que leurs liaisons
+- Une sauvegarde .bak de la BDD est disponible dans le dossier Ressources à la racine du projet. (Il suffira juste de le restaurer)
 
 #### APPLICATION
 - Dans le fichier appsettings.json à la racine du projet, Section ConnectionStrings, renseigner le nom du serveur et la base de données.
@@ -54,7 +55,7 @@ Entrez les programmes/logiciels/ressources que vous avez utilisé pour développ
 
 ## Difficultés
 
-- Aucune difficultés majeures au point de m'empêcher de dévolopper les fonctionnalitées demandées n'a été relevé, y compris la partie BONUS dont j'ai une bonne idée.
+- Aucune difficulté majeure au point de m'empêcher de dévolopper les fonctionnalitées demandées n'a été relevé, y compris la partie BONUS dont j'ai une bonne idée.
 - Mon seul soucis c'est que je suis en période d'éxamen du coup je n'ai pas pu vous le rendre à la date convenue, ni à m'y consacrer à 100% de mes capacités.
 - Je suis vraiment désolé, mais bref voici ce que j'ai pu faire avec toutes mes années d'experimention en autonomie dans le dev :) .
 - Je ne sais que théoriquement comment mettre en place des tests unitaires telles que sur le framework NUnit, mais tout s'apprend.
